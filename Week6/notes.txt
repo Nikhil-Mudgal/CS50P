@@ -1,0 +1,31 @@
+Unit tests (Testing individual units/functions in our program)
+==========
+
+Writing our own test to verify that the prolems we are trying to solve are being actually solved correctly or not. 
+Unit tests are the program whose sole purpose is to test another program. 
+
+convention:- 
+
+if my function is called as fun and i want to create a unit test for that particular function i need to name the function as test_fun
+
+"assert" keyword in python 
+==========================
+
+This claims that something is true and if it is false then we are going to get some error on the screen even though the code works. it does not work as desired.
+
+"AssertionError" exception 
+==========================
+
+tools to test the function 
+
+pytest -- automates the testing of our code so long as we type the test.
+
+when we are using floats we might get error because all computers are stupid ")
+
+testing for type errors in main_fun 
+
+Creating "__init__.py"
+======================
+
+even if the file is empty to treat the folder as a packages. This makes it sure that the folder is treated as a package and if more code in the folder
+we can do more with this packages

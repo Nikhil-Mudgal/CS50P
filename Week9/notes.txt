@@ -1,0 +1,402 @@
+Python Object Oriented Programming Scheme (POOPS)
+================================================
+
+
+Tuples 
+======
+
+Data structure in python that is immutable.. in the form 
+
+return name, house -- one tuple is returned with 2 objects  -- tuple is the default return here
+
+this can also be presented in the form of (name, house)
+
+Tuples are immutable and if we try to change the value we get thrown with a type error, that tuples do not support item assignment.
+
+We can have nested tuples in python. 
+
+Python List
+===========
+
+Python list are mutable and supports item assignment. making them a bit more powerful but more dangerous than tuples too. 
+
+Python Dicts 
+============
+
+Provides the data in form of key value pairs.More expressive and more symatically correct than list and tuples. like lists these guys are mutable,
+already seen
+
+def main():
+    student = get_student() # unpacks sequence of values 
+    if student["name"] == "padma":
+        student["house"] = "RavenClaw"
+    print(f"{student['name']} from {student['house']}")
+
+def get_student():
+    return {"name": input("Name: "),
+            "house": input("House: ")}
+
+Named variables in python 
+=========================
+
+How to create a python dtype ??
+-------------------------------
+
+Classes 
+=======
+
+A blueprint for pieces of data and is like a mold which we can define and when we use it we get the types of data that are designed 
+as we want and this gives us the option to define data type as we require and use it.
+
+A template for creating user-defined objects. Class definitions normally contain method definitions which operate on instances of the class.
+
+Class have things that are called as attributes. 
+
+student.name and student.house are attributes 
+
+We can create classes using class keyword and anytime we use the class we are going to create objects.
+
+student = Student() -- here student is an object
+
+Object
+======
+
+These are the molds that we peel off when we have to create objects. Object is the instanciation for the classes or the data type.
+ 
+Classes are mutuable and they can also be immutable.
+
+
+Attributes or Instance Variables
+===============================
+
+name and house here are variables called  name and house inside of an object whose type is student.
+
+
+Creating arbitary attributes in classes 
+=======================================
+
+Now as we are passing the name and house to the class we have more control over the things that we have entered in the name and house by defining 
+some methods or checks within our Class itself.
+
+methods
+=======
+
+These functions inside the Class are special. These functions allow us to identify behaviour in a certain way.
+
+__init__ method -- if we want to initialize the contents of an object from a class we define this method
+
+----------------------------
+Adding variables to objects ||
+----------------------------
+
+
+student = Student(name,house) -- this is called as a constructor call and is going to construct a student object for me
+                                 or this is going to instanciate a student object for me 
+                                 and how ? 
+                                 it is going to use student class as a template and so that student are structured the same 
+                                 but since we are going to be able to pass attributes to the Student() object we can customize
+                                 the information inside the object but it will be in the same template as the other student objects.
+ 
+function that is by default called by def of how python classes work is called __init__ . What is self parameter in the __init__ function? 
+
+To store the attributes in the object instanciated, the authors decided that __init__ will take an additional argument called self. 
+
+the self basically gives access to the current object just instanciated.
+Python automatically passes in a reference to/ an argument (the object just instanciated) 
+
+constructor vs __init__ 
+
+__init__ -- initialization method 
+__new__ -- creates an empty object in memory for us and we dont need to do this as already done in background
+
+
+Class is just code, objects are stored in memory taking up some number of bytes, this python interpretor handles for us.
+
+OOPS encourages us to encapsulate inside of a class all functionality realted to that class.
+
+If we want to validate whether the name exist or whether the class exist we can validate that in the class itself not some random function that we wrote elsewhere.
+
+Why not return None if the name or house is empty? 
+--------------------------------------------------
+
+It is too late to do that, there is already an object in the memory wth the name student it just does not have any information. the object exist and so we can't 
+now say that the object is None 
+
+raise (creating own exceptions)
+===============================
+
+Helps to raise our own exceptions in the case of errors 
+
+if the object has been called directly and printed we are actually going to see where in the computer memory has the object been stored.
+
+Library of classes to use classes in different files
+----------------------------------------------------
+
+
+The "__str__" function  (meant for user's of the program)
+====================== 
+
+__str__ = Anytime some other function wants to see my object as a string but by default if we dont have this function setup we get the address of the store.
+
+But if this is defined we get a string 
+
+__str__ takes self argument by default. When calling a function that expects return string like print() the __str__ is going to get triggered and python automatically
+passes reference to an object to be printed.
+
+This allows to use the class object with any function that expects a str return 
+
+__repr__ -- developers eyes 
+
+Classes unlike dict can have functions or methods builtin like __init__ and __str__ but these are special methods, how to create arbitary methods to do something.
+
+Any of these arbitary functions dubbed as methods inside the class are going to take atleast one argument that is called as self.
+
+
+emoji is number to character called unicode :).
+
+Time is 1:19
+class Student():
+    def __init__(self,name,house,patronus): # python automatically calls this 
+        if not name:
+             raise ValueError("Missing name")
+        if house not in ["Gryffindor","Hufflepuff","Slytherin","RavenClaw"]:
+            raise ValueError("Invalid house")
+        self.name = name 
+        self.house = house
+        self.patronus = patronus
+
+    def __str__(self): 
+        return f"{self.name} is from {self.house}"
+    
+    def charm(self):
+        match self.patronus:
+            case "Stag":
+                return "run bruh"
+            case "Otter":
+                return "tttrrrr"
+            case "Jack Russel terrier":
+                return "bark"
+            case _:
+                return "wee"
+
+def main():
+    student = get_student() # unpacks sequence of values 
+    print("Expecto Patronum!")
+    print(student.charm())
+
+
+def get_student():
+    name = input("Name: ")
+    house = input("House: ")
+    patronus = input("Patronus: ")
+    return Student(name, house,patronus)
+
+
+
+if __name__ == "__main__":
+    main()
+
+with objects and different class notations we can always access the things that are inside the classes. and this can circumvent the conditions put in
+when instanciation of the object
+
+properties 
+==========
+
+Attributes with more defence mechanisms put into place to prevent programmers from messing up. We have more control over these attributes
+
+
+@ syntax -- decorators (functions that modify the behaviour of other functions )
+
+GETTER - getter is a function in class that gets some value and 
+SETTER - is a function in class that sets some values
+
+
+lets require that in order to access a attribute we go though some function and to set some attribute we go through some function.
+
+after this getter - setter  pair is created 
+
+what is going to happen is that python is not going to let the user access the attribute/instance variable directly but instead calls the setter function to change it.
+
+and uses getter to even access it and how does it know how to do that ?
+
+it sees self.house = it automatically checks what is happening and provides enough visual clue to run the error check to the function.
+
+@property  -- defining the getter 
+==========-=====================
+
+function should be named exactly like the property we want to be called. 
+
+@house.setter -- defines the setter
+-===================================
+
+functoin whose name is identical but has 2 arguments self and the str so that we can set the value as well 
+
+this prompts that we no longer need the error check in __init__. because self.house in __init__ is also going to call the setter method.
+
+Very cool !!!
+
+But if i have attributes/instance variable inside __init__ named house I cannot have function named house they are going to collide
+
+convention is to use the function as is and change the name of the attribute by adding "_" before it as "_house". such that the setter does not store the value 
+in self.house but use an almost identical name adding the _house
+
+
+Q - Why not _house in __init__ method and only in the getter and setter ? 
+
+A - using "self.house = " is the same pattern we want python to recognize. We want python to automatically acess the setter even when passing in __init__
+    using "self._house" circumvents the setter and there is no checking in __init__. This is just the convention
+
+python is based on convention and not shit show 
+
+we can in fact still change the house at hand if we access the class with 
+
+house which is a property but _house is an instance variable.
+
+"student._house" == certain can be public protected or private in java, we are in the honor system.
+
+################# Python Honor System ################################
+
+if an instance variable starts with an underscore please dont touch it , if 2 underscore really dont touch this.
+
+int
+===
+
+# class int (x, base = 10) -- signature for contruvtor of an integer 
+template for creating integers in the memory 
+
+# class str (object="") -- optional parameter for creating empty string
+
+str.lower is a method inside the string object.
+
+str.strip([chars]) -- methods to strip whitespace from start and end
+
+list 
+====
+class list([iterable]) -- list is a class itself, and takes optional an iterable something can be iterated over 
+
+list.appen(x) -- allows to append something to a list 
+
+Dicts
+=====
+
+class dict
+
+
+since int str list -- that are the built in datatypes are lower cased while our own classes like Student should be Capitalized.
+
+Other methods
+=============
+
+class methods 
+------------
+
+sometimes is logical to associate a function not with the obejtc of the class but with the class itself. An instance is a very specific incarnation of the object.
+
+Sometimes we want the functionality to be associated with the class itself no matter the associated value or instance variables are.
+
+Instance methods have access to self but the 
+
+@classmethod
+============
+
+does not have direct access to self but it knows what class it is inside,
+
+we can start an empty class wth a place holder ... or pass when we are unsure what to actually do wth the class
+
+Since we only have one sorting hat in the harry potter universe we dont not need to instanciate it again and again and we can acutally create a classmethod
+
+Sometimes it is just sufficient to know what the class it and assume that there is not any object of that class.
+
+Classes in this sense become containers of data and functionality that are somehow realted.
+
+Class methods Terminology 
+=========================
+
+@classmethod
+def fun_name(cls,name_var): # where cls is the class reference
+    cls.houses == defines cls as class varaible 
+
+A method inside a class is automatically called as an instance method unless the decorator @classmethod has been specified above the method itself.
+
+# student.py 
+
+class Student():
+    def __init__(self,name,house): # python automatically calls this 
+        self.name = name 
+        self.house = house
+
+    def __str__(self): 
+        return f"{self.name} is from {self.house}"
+    
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self,name):
+        if not name:
+            raise ValueError("Invalid Name")
+        self._name = name
+        
+    @property
+    def house(self):
+        return self._house
+
+    @house.setter
+    def house(self,house):
+        if house not in ["Gryffindor","Hufflepuff","Slytherin","RavenClaw"]:
+            raise ValueError("Invalid House")
+        self._house = house
+
+def main():
+    student = get_student() # unpacks sequence of values 
+    print(student)
+    
+
+def get_student():
+    name = input("Name: ")
+    house = input("House: ")
+    return Student(name, house)
+
+
+
+if __name__ == "__main__":
+    main()
+
+More on classmethods
+====================
+
+Since the get method is a class method it gets called without instanciation of the student object first. 
+
+Define classes in some other file and then import them
+
+@staticmethod  -- what is this ?
+============= 
+
+Inheritance:
+============
+
+One calss inherits from or borrows attributes or methods from another class.
+Heirachy between the classes.
+
+This Heirachy is maintained by code like:- 
+class Student(Wizard): where student is the sub class of Wizard which is the super class
+
+
+super() is a way of programatically accessing a current class parent class or super class and super().__init__ is a way of acessing the super classes 
+__init__ method.
+
+Operator Overloading 
+====================
+
+Taking very common symbols and we can interpret our own interpretation of
+
+overloading vaults to add vaults together 
+
+adding self.galleons + str works -- test somehow ?
+
+special-method-names 
+
+=========================================
+we cannot define new operator in python ||
+=========================================

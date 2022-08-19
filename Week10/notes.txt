@@ -1,0 +1,224 @@
+ More things to do with python 
+ =============================
+
+ set
+ ===
+
+set can be created using {} or set().
+
+
+global 
+======
+
+Defines a global variable. informs the local variable inside the function that the variable is actually global.
+Use sparingly only. 
+
+Scope Resolution
+================
+
+changing global variable in a function does not work.
+
+if a local variable with same name as global variable avaialble in the function then local variable is preferred over the global one.
+
+balance = 0
+
+def main():
+    print("Balance:",balance)
+    deposit(100)
+    withdraw(50)
+    print("Balance:",balance)
+
+def deposit(n):
+    global balance 
+    balance += n
+
+def withdraw(n):
+    global balance
+    balance -= n
+
+if __name__ == "__main__":
+    main()
+
+
+ @property -- defines a getter and allows more protection to the code than others.
+ 
+ =========
+ constants| 
+ =========   
+
+variable that cannot be changed, but in python again we have honor code for this.
+
+CAPITALIZED variable ARE CONST IN PYTHON'S HONOR CODE
+
+class constants 
+===============
+
+
+Type hints 
+==========
+
+python is a dynamically typed language and does not require explicit declaration of the dtype.
+
+
+mypy 
+====
+
+helps to find type errors in our program
+
+
+def meow(n:int) -> None 
+
+Docstrings (pep - 0257)
+=======================
+
+Switches or flags in CLI 
+========================
+
+python name.py -n 3 -- where -n is the number of times 
+
+for CLI convention is to use 
+single dash with single character 
+and double dash with words  
+
+
+argparse  -- this is a very cool library mucho thank u 
+======== 
+
+More complicated than class demos. 
+
+import argparse 
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-n")
+args = parser.parse_args() # looks into sys.argv for me automatically 
+
+for _ in range(int(args.n)):
+    print("meow")
+
+
+Unpacking 
+=========
+
+for lists 
+---------
+
+if we use "*" in front of my varabile iterable it allows me to unpack it and explodes it into the required arguments inside the function. 
+
+we cannot get individual values with *var.
+
+for dicts
+--------
+
+we use "**" asterisk in front of the dict and unpacks all the values inside the function.   
+
+very cool and is same as named declaration of the varaibles.
+
+
+for dict
+def total(galleons=0,sickles=0,knuts=0):
+    return (galleons * 17 + sickles) * 29 + knuts
+
+coins = {
+    "galleons":100,
+    "sickles":50,
+    "knuts":25
+}
+
+print(total(**coins),"Knuts")
+
+
+=================
+*args , **kwargs || -- these are place holder for var number of arguments and var number of kwargs
+=================
+args = argument (saved as tuple)
+kwargs = keyword arguments (saved as dict)
+when the function takes varabile number of arguments and syntax for implementing the idea is this 
+
+print(*objects)
+
+----------------------------------
+Wrapping is supported by this shit|| 
+----------------------------------
+
+====
+map ||| 
+====
+
+list comprehensions
+==================
+
+creating a list on the fly -- waow 
+
+students = [
+    {"name":"Hermoine","house":"Gryffindor"},
+    {"name":"Harry","house":"Gryffindor"},
+    {"name":"Ron","house":"Gryffindor"},
+    {"name":"Draco","house":"Slytherin"},
+    {"name":"Padma","house":"Ravenclaw"},
+]
+
+gryffindors = [
+    student["name"] for student in students if student["house"] == "Gryffindor"
+]
+
+for student in sorted(gryffindors):
+    print(student)
+
+======
+filter||
+======
+
+students = [
+    {"name": "Hermoine", "house": "Gryffindor"},
+    {"name": "Harry", "house": "Gryffindor"},
+    {"name": "Ron", "house": "Gryffindor"},
+    {"name": "Draco", "house": "Slytherin"},
+    {"name": "Padma", "house": "Ravenclaw"},
+]
+
+
+def is_gryffindor(s):
+    return s["house"] == "Gryffindor"
+
+
+gryffindors = filter(is_gryffindor, students)
+
+for student in sorted(gryffindors, key=lambda s: s["name"]):
+    print(student["name"])
+
+
+
+Dictionary comprehensions
+=========================
+
+students = ["Hermoine","Harry","Ron"]
+
+gryffindors = {student:"Gryffindor" for student in students}
+
+print(gryffindors)
+
+
+emumerate
+=========
+students = ["Hermoine", "Harry", "Ron"]
+
+for i, student in enumerate(students):
+    print(i + 1, student)
+
+
+===========
+Generators || -- retains the state for us.
+===========
+
+Program might run out of memory. Where the function might generate massive amount of data for the user and we should only return small amount of data.  
+
+======
+yield || -- tells python to effectively return one value at a time for the loop
+======
+
+iterator
+========
+
+yield retrun an iterator to iterate over the for loop.
+

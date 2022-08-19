@@ -1,0 +1,67 @@
+Key operators in python:_
+
+>  : greater than 
+>= : greater than equal to
+<  : less than 
+<= : less than equal to 
+== : equal to
+!= : not equal to
+
+The "if" keyword :
+=================
+
+if num1 < num2: # boolean expression 
+
+indentation is the key in python and this tells python that something inside the condition is only executed when condition suffices. We go through all the if's 
+regarless we obtained 1 if or 2 if's or n if's. 
+
+elif is a better way for comparison.
+
+The "elif" keyword:
+===================
+
+same as multiple if's but not similar. if we get back a correct answer we directly go to program stop and we dont have to go over all the questions. 
+
+see flow charts at 12:53 in the video.
+
+This makes the condition mutually exclusive. 
+
+The "else" keyword:
+===================
+
+if the "if" conditional is true and there is only one other answer left than else can be used.
+
+These 3 conditionals are basically used for code optimization rather than anything else.
+
+Using different conditionals we can decrease the complexity of the program and we are less likely to make mistakes and the coder is more likely to understand the code.
+
+The "or" Keyword:
+=================
+
+can be clubbed with if.
+
+The "and" Keyword:
+==================
+
+Conjuction of 1 or more conditions in the same if statement 
+
+Python can return boolean also.
+
+Pythonic Way:
+=============
+
+return True if n % 2 ==0 else False 
+ 
+but since n % 2 == 0 already returns True or False why even use if and else:
+
+just use :
+
+return n % 2 == 0
+
+
+The "match" keyword:
+====================
+
+Multiple conditions compactly
+
+case _ as the last "else" like statement

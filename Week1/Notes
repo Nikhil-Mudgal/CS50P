@@ -1,0 +1,165 @@
+when we are calling the code as python3 Function_Variables.py
+
+We mean the following things:-
+
+The definition python3 basically acts as an interpreter which tells our computer that the file 
+it is about to process is written in python.
+python is not only a language but a program that is called as an interpreter which basically handles the process of reading the code
+and translating it into 0s and 1s that is going to actually run on my PC.
+
+Functions:- 
+
+Action or verb that lets us do something in the program. 
+Any language comes with predetermined set of function that the computer will already know to do it for us.
+
+print() is the function that is used in our basic program. -- This does not output some preordained set of text but prints the stuff that we actually want to print. 
+
+Arguments:- 
+
+Side effect:-
+Thing that appears on the screen or does some action in the program. 
+
+Bugs:- 
+Mistake in a program. I will make mistakes :) and these are the probelms that we are going to solve. 
+
+GUI is the best way when we are tryign to ship our code  into some other system.
+
+Return Values:-
+
+Some functions basically have a return value. That is it gies some output that can then be stored in some variable. The varaible is nothing but a container that contains the information that is outputted from the function itself. 
+
+"=" sign:- 
+This is basically the assignment operator and the "=" copies from right to left whatever the return value of the function is.
+
+When the return function has been assigned with a variable we have sitting in the computer memory somewhere a container containing, the name of the person we have inputted.
+
+
+Comments:-
+Notes to ourselves in the code and we write comments by using the "#" symbol in the program. 
+
+PseudoCode:-
+
+Using human language to basically provide an outline of our program. This enables us to breakdown the code in smaller blocks and cross check whether the goal is met or not.
+
+Some function take  multiple argumnets, print is similar in this sense. We can seperate these arguments using commas and type the required arguments based on the documentation.
+
+When we ask multiple arguments to print it automatically takes up one space. 
+
+String(str):-
+-----------
+
+str(string) = sequence of texts
+
+"+" operator:
+Is also used for the concatenation of strings in python programming language. 
+
+print function automatically goes to a new line and we can overide this behaviour using the arguments in the documentation. Here it is the end argument or the parameter. 
+
+In the documetation these arguments are referred to as paramenter and when we use the function as pass in value within the parenthesis these terms are called as arguments.
+
+print(*objects, sep = ' ' , end='\n') '\n' -> Is a Enter or new line and is way of indicating to the computer to get the text entered in a new line,
+sep = used when we are going to use multiple arguments in the print and is set to a single space " " by default. 
+
+Positional Parameters and Named Parameters(optional and generally contain some default value.)
+
+"\" operator:-
+This is an escape characte. 
+
+"f" strings (format string):-
+
+This tells python to format stuff inside the string in a specific way.
+
+String-methods:- 
+
+Ability to do something to modify the string on python.
+
+str.strip() = method that basically strips the whitespaces from the string and returns a string value.
+
+We can not only assign value to the varaibles but we can also change the values inside the same variable. This is called as overlaoding 
+
+str.capitalize() = capitalizes the first letter in the string 
+
+str.title() = capitalizes the dirst letter of each word in the string
+
+str.strip().title() = chaining 2 methods and returning to the same name variable. 
+
+strip() only removes from left to write.
+
+How many functions can we combine in the way ? Depends on our sense of style or comapany norms. mb pep8 ?  
+
+str.split() = Breaks the string into substrings  
+
+Integers(int):
+--------------
+
+Integers include negative and positive numbers. 
+
++ - * / %(modulo)
+
+interactive mode (directly using python3 in the terminal.) # dont do that :/
+
+
+Changing the type of the variable:- 
+
+Changing from str to int can be (sometimes****) simple as
+
+int(str) :- so long as the str looks like a number python converts the str into int
+
+Nesting functions: 
+
+Return value of the inner function becomes the argument to the outer function and returns to the variable we are going to assign.
+
+Float(float):
+------------
+
+Floating point value (Real number) Number with a decimal point in it.
+
+
+round(number[,ndigits]) # takes just one number as its first argument.
+[] means optional, Number of digits we want the round function to round to we use ndigits parameter in the function
+
+{z:,} in f string adds commas after 3 digits.
+
+cap to the decimal point if float = only 16 bit
+
+There is no upper bound on int in python but there is a bound on how precise the floatng point value can be
+
+{z:.2f} in f string rounds to decimal point.
+
+def:-
+-----
+
+Used for defining a function.
+
+This helps to not type the same thing again and again.
+
+The function call must be below the function definition this is because python interpretor takes the function literally. 
+
+in the function by using main() we are defining the functions and then at the end calling the main()
+
+We need to take care of the scope of the variables when we are using the functions.
+
+Scope:-
+-------
+Varaible only existing in the context in which we have defined it. If i have defined my varaible in the main function I can only use that variable in the main function.
+
+Return:-
+--------
+
+Returns the value created by our function 
+
+Container in Server ?? Check and Update 
+
+
+Some Basic Linux Commands 
+=========================
+
+ls - list
+cp - copy
+mv - move
+rm - remove 
+mkdir - make directory
+cd - change directory
+rmdir - remove directory
+clear - clear terminal
+

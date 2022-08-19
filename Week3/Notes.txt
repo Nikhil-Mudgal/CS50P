@@ -1,0 +1,86 @@
+Loops :- 
+
+the ability of a program to do something again and again. 
+
+The "while" Keyword:
+====================
+
+This is one of the wat we can express our loop and this will basically provide some condition or a question and execute whatever is inside of it it the condition 
+specified is True or False as per the user defined vocabulary.
+
+Question or condition is generally the one where the answer is usually true or false. 
+
+Be carefull of infinte loop !! 
+
+initilization before condition in "while" is important otherwise variable not declared error is thrown out by python.. 
+
+Take care while using != and ++, look at the variable declaration before expressing the condition. 
+
+The "for" Keyword:
+================
+
+We don't put conditions in for loop.
+
+List datatype
+=============
+
+Way of containing multiple values all in the same space. Items in the list can be any python object. They do not have to be at the same type.
+
+The "range" Keyword:
+====================
+
+Returns a range of value. Basically a list from the number specified. 
+
+The "_" Keyword:
+================
+
+if we need a variable just because the program requires it but the human does not need it. We can use "_" character to use the same loop
+
+"\n" -- escape sequence.
+
+Whenever we want to get a user input that matches certain expectation we immediately say "while True"
+
+and then use "break" when that particular condition has been met
+
+Use return either inside the loop or mention explicitely outside on the loop
+
+To access the items inside a list or index into a list we use numbers inside the "[]" to extract the object present inside the list
+
+we dont need to initialize the variable using for 
+
+The "len" Keyword:
+==================
+
+As the name suggest this basically gives us the length of the list or array and many things
+
+The "dict" datatype:
+====================
+
+Allows us to associate one value with another, key-value pairs. 
+
+by definition 
+when we iterate over a dict we get the keys of the dict and then we can use these keys to find the pair value. 
+
+The "None" Keyword:
+==================
+
+This is used for explicitely specifying the the information entered is unknown.
+
+
+
+Creating abstraction of functions
+==================================
+
+This means the function does not exist yet but we are still declaring the function to get the idea what the function is actually going to do. 
+
+
+Changing the internals of the function without changing the function name or function params no one can notice a change
+
+
+print() all by itself is the automatic new line.
+
+
+Nesting Loops
+=============
+
+One loop inside of another loop

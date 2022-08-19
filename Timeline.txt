@@ -1,0 +1,13 @@
+Functions and Variables
+Conditionals 
+Loops 
+Exceptions -- writing code defensively and for patching the errors 
+Libraries
+Unit Tests -- writing test for our own code 
+File I/O -- Not only use up the cmputer memory but to store the programs in disks 
+Regular Expressions -- Type data, regularize data
+Object Oriented Programming 
+Procedural programming 
+Functional Programming 
+Et Cetera
+Programming Projects -- Very important to do

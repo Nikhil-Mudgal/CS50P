@@ -1,0 +1,130 @@
+Modules  (Lecture 1)
+=======
+
+Encourages reusability of the code.. Copy and pasting from an old project is not efficient instead we can create modules out of these function to 
+use them more efficiently on the other function.
+
+random (random.py)
+==================
+
+Random is one of the modules that comes pre installed with python 
+
+"import" Keyword in python 
+==========================
+
+importing a library or a module ,which is nothing but a program file written by someone else, is essentially providing me access to all the functions inside that
+module. Used as such:- 
+
+import random 
+
+"from" Keyword in python
+========================
+
+importing a function in python provides access to all the functions inside that particular module. But if we want the access to only some functions we can
+explicitely define them using the "from" Keyword in python. Used as such:- 
+
+1. from random import choice.
+
+When to explicitely call the function inside the library ? 
+
+when maybe program is short and we are not caring about name conflict.
+
+2. from random import randint # returns random number in the range of (a,b) inclusive.
+
+3. random.shuffle(x) shuffles the entered list 
+
+statistics (statistics.py)
+==========================
+
+import statistics 
+
+Use for calcualting mean average and other statistical analysis in our data. 
+
+Command line arguments 
+======================
+
+sys(sys.py)
+
+sys.argv (sys.argument_vector) 
+------------------------------
+All the words that the user typed in after the code run prompt are stored in argv
+
+sys.argv[1] is used as sys.argv[0] is reserved for the name of the python file. 
+
+IndexError
+==========
+
+trying to access some element that does not exist.  
+
+sys.exit() -- exits out of the program on call. very cool gets string as an argumnet.. prints the string and exits out of the program. 
+
+
+slice of a list 
+===============
+
+list[1:] -- retains elements after the first index in the list "). This starts the slicing from the beginning 
+
+list[:-1] -- this starts the slicing from the end and retains elemts before the last index in the list ")
+
+packages 
+========
+
+These are the 3rd party library. Python also has packages that are essentially modules implemented in a folder. 
+packages are library that can be installed in our local and gain more functionality that can be utilized. 
+
+Pypi - python package index
+============================
+
+cowsay -- is a package that allows us to prompt the cow to say something   
+
+pip -- package manager
+======================
+
+
+APIs == Application programming interface
+=========================================
+
+3rd party service that we can write code to and talk too.
+
+requests library allows to make web request
+===========================================
+
+java script object notation == relates to java script but it is now used a language agnostic format for exchanging data between computers. 
+
+read and write can be done with anything -- language agnostic 
+
+it is reasonable for a dict to be inside another dict if the value of some key itself is a dict.
+
+is calling main all the time good ? 
+
+
+"__name__" variable:
+
+automatically sets to main when we are running the file through the command line. if imported the file it will be set to the name of the module and main 
+will not be called. 
+
+if __name__ == "__main__":
+    main()
+
+Style(Lecture-2)
+================
+
+PEP 8 == python enhancement proposal
+
+(Writing maintable and easier to read code)
+
+"Readability counts" -- style guide
+
+
+Indentation -- 4 spaces 
+Tabs or space ? -- space
+Maxium line length -- 
+Blank lines -- 2 lines between each functions  
+Imports -- how and where to put import
+... 
+
+pylint == linting 
+pycodestyle -- formatting the code for us -- pep8 
+black -- very cool ")
+
+

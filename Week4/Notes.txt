@@ -1,0 +1,27 @@
+Exceptions
+==========
+
+problems in our code that means that something has gone wrong in  our problem 
+
+literal = means something that we have typed
+
+SyntaxError 
+===========
+
+This error occurs when we have written something wrongly in our code. This error can only be resolved by checking the code for any kind of missing ")" or missed '"' etc 
+
+
+ValueError 
+==========
+
+Invalid literal for int() with base 10: "string". This might happen w
+
+
+"try" and "except" Keyword
+==========================
+
+return and pass keywords in python
+=================================
+
+
+

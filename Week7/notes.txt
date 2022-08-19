@@ -1,0 +1,106 @@
+File I/O 
+========
+
+Downside of varaible is that it is lost when the program shuts off. 
+In the context of programming file I/O refers to the process to read from or write the code output or varaibles to the files itself in order to save them for a 
+longer duration.
+
+list 
+====
+
+Stores multiple information, but since they are stored in the computer memory when the program exits the content inside the list disappers. 
+
+"open" keyword in python 
+========================
+
+the programmers equivalent of double clicking in python. This allows the programmer to write to the file or read from it. This also create the file 
+
+to specify whether the operation is read or write we need to additionally define using keyword as: 
+
+open("names.txt","w") -- specifies the write operation (this is dangerous not only does this create the file but it also recreates the file for us)
+open("names.txt","r") -- specifies the read operation (this is the default state)
+open("names.txt","a") -- creates a new file and appends to the same
+open("file_name.txt","wb") -- specifies write in binary mode
+
+
+write takes us literally and does not create a new line and so we need to add a new line at the end of each name s
+
+how to store data more cleanly, i.e. one name at a time. 
+
+what if we forget to close the file ?
+
+For the most part, not closing files is a bad idea, for the following reasons:
+
+1. It puts your program in the garbage collectors hands - though the file in theory will be auto closed, it may not be closed. Python 3 and Cpython generally do a pretty good job at garbage collecting, but not always, and other variants generally suck at it.
+2. It can slow down your program. Too many things open, and thus more used space in the RAM, will impact performance.
+3. For the most part, many changes to files in python do not go into effect until after the file is closed, so if your script edits, leaves open, and reads a file, it won't see the edits.
+4. You could, theoretically, run in to limits of how many files you can have open.
+5. Windows treats open files as locked, so legit things like AV scanners or other python scripts can't read the file.
+
+
+"with" keyword in python (the pythonic way for file i/o) 
+========================================================
+
+file.readlines() -- open file comes with a readlines() that reads all the lines in the files and stores them in a varaible
+Since each name is in a new line in names.txt, print adds another line to the particular result. 
+to remove this we either put end = "" or we use the line.rstrip() method to get rid of the extra new line.
+
+one of the clean ways to do the same is to use 
+
+with open(name, "r" ) as f:
+    for line in file:
+        print(f"hello,  {file.rstrip()}")
+
+but if we want to sort the names before reading them we need to first read them all together and then print them, for the same above does not work. 
+
+with open("names.txt","r") as file:
+    for line in sorted(file): # using the sort here is also acceptable 
+        print(f"hello, {line.rstrip()}") # provides more compact and btr solution 
+rstrip() = used for removing the characters from the end of the line 
+
+csv (comma seperated values) -- these is a very common and powerful text format that can be used to store the data
+
+it is easier to read the file and then write the whole file, for larger file this is very slow.
+
+Sort the list by looking at the keys in the dictionary
+
+python allows us to pass function as arguments into other functions but only as pass by name 
+
+when we pass function to the sorted function that function is automaticaly called on each value of the list and it then uses the names on how to compare the same values.
+
+Function and methods are first class objects but they are objects in the end and can be passed by name in python as such with using the parenthesis. 
+
+sorted function use value of key calling the function on every dict in the list supposed to sort and the function get name return the string that decides how the values
+must be sorted 
+
+===============
+passing by name || 
+===============
+
+"csv" package  
+=============
+
+csv.reader 
+csv.DictReader 
+csv.writer
+csv.writer.writerow([])
+csv.DictWriter
+
+
+Binary files 
+============
+
+Storing images, audio video etc.
+
+Pillow -- Image files PIL (Python Imaging Library )  
+=====================
+
+from PIL import Image
+
+refer to costumes.py
+
+loop = 0 runs the command indefinitly as expected for a gif 
+
+
+
+

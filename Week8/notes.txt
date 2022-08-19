@@ -1,0 +1,129 @@
+Regular expression 
+==================
+
+regexes 
+-------
+Regular expression we have capabilites to define patterns in our code to validate it or compare the data or clean the data
+
+str.strip() removes the end space or white space from the function leading or trailing
+
+Using trivial techniques to validate an email address 
+=================------------------------------------
+
+# print("Valid") if "@" and "." in email else print("Invalid")
+
+username,domain = email.split('@')
+
+if username and domain.endswith(".edu"): 
+    print("valid")
+else:
+    print("Invalid")
+
+
+"re" library
+============
+
+lets us define the patters and can use these patters to validate or change the user input.
+
+re.search()
+
+. -- any character except a newline 
+    indicates any character
+* -- 0 or more repetitions 
+    zero repetitions or more repetitions
++ -- 1 or more repetitions
+    atleast one character and optionally more after that  (one or more of the things to the left)
+? -- 0 or 1 repetitions
+{m} -- m repetitions
+{m,n} -- (m,n) repetitions
+^ -- matches the start of the string 
+$ -- matches the end of the string or just before the newline at the end of the string
+[] -- set of characters 
+    match characters explictely inside the square brackets  
+[^] -- complementing the set 
+    cannot match any of these characters 
+\w == alphanumeric character with _
+\W -- not a word character
+\d -- decimal digit
+\D -- not a decimal digit 
+\s -- whitespace characters 
+\S -- not a whitespace character 
+
+A|B -- either A or B
+(...) -- a group 
+(?:...) -- dont capture from group accept rest 
+
+
+.*@.* gives me something or nothing to the left and something or nothing to the right
+    here first dot means any character then * means zero or more characters then @ is character to find or the break character and then again same as before
+.+@.+ gives me something to the left and something to the right 
+    here first dot means any character then + means 1 or more characters then @ is character to find or the break character and then again same as before
+..*@..* gives something to the left and something to the right 
+    here first dot means some character other than new line then the next .* means zero or more of any character then @ is the break and following is same as prior
+
+Non deterministic finite automaton 
+==================================
+
+start --> q1 ---> @ -- > q2 (double circles) (accept state)     
+     |       |
+     |       |
+       ------
+
+if the function abve finds itself in the accept state after the function has run then it is indeed a valid email address otherwise not. 
+
+r" " string -- raw string 
+
+response validation 
+"regular expressions " -- to validate user inputs and use it 
+
+# this validates even a sentence containing email as we have not yet defined how many characters are accepted before the @ sign and after the @ sign.\
+
+import re
+
+email = input("What's your email? ").strip()    
+
+
+if re.search(r".+@.+\.edu",email):
+    print("Valid")
+else:
+    print("Invalid")
+
+this user response validation is very important
+
+[^@] -- any character except the @ sign 
+
+to specify a range in the sqaure bracket we can just do [a-zA-Z]
+
+(\w|\s) -- word character or whitespace character 
+
+flags in re.search :-
+
+re.IGNORECASE -- treats as case insensitive 
+re.MULTILINE -- maybe text takes multiple lines
+re.DOTALL -- configure . to recognize any character + new line 
+
+## Tolerating a subdomain 
+=========================
+
+r"^(\w|\.)+@(\w+\.)*\w+\.(edu|com)$"
+
+re.match()
+re.fullmatch()
+
+re.search also return a value that basically tells what has been found.This is facilitated by parenthesis, everything inside it is returned to us.
+
+by default we usually use matches as the word and use the matches.group() method in the matches function
+
+"walrus" operator in python 
+===========================
+
+allows to both assign and ask a boolean question about it 
+
+str.removeprefix() -- substring that comes at the start of another -- should be noted. this will not give erratic behaviour as replace.
+
+
+re.sub(pattern,repl,string,count=0,flags=0) -- it is like find and replace but what if 
+
+using regex take baby steps and then only do anything 
+
+re.search() -- is more powerful as what if the user types some bs we need to first check whether the data inputted is right or not.
